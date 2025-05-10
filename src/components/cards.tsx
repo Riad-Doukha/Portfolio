@@ -32,15 +32,8 @@ const cards = [
 export default function DraggableCardStack() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  const [isReady, setIsReady]= useState(false)
-
-
-  if (!isReady) {
-    return <div>Loading...</div>; 
-  }
   
   useEffect(() => {
-    setIsReady(true);
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 700);
     };
