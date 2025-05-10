@@ -9,15 +9,15 @@ import {
 const cards = [
   {
     title: "Skilled Professional",
-    description: "Gain access to top-tier talent with years of experience, ensuring flawless execution.",
+    description: "Gain access to top-tier talent with deep experience, ensuring flawless execution.",
   },
   {
-    title: "Future-Ready Designs",
-    description: "Crafting modern, scalable designs that grow with your business and stay ahead of trends.",
+    title: "Future-Ready Websites",
+    description: "Crafting modern, scalable websites that grow with your business and stay ahead of trends.",
   },
   {
     title: "Client-Centric Collabs",
-    description: "Your vision leads the way — I work closely with you to bring ideas to life with precision and creativity.",
+    description: "Your vision leads the way, I work closely with you to bring ideas to life with precision and creativity.",
   },
   {
     title: "Real-time Features",

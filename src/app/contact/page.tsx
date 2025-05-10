@@ -120,9 +120,9 @@ export default function Contact() {
                 <label className="block mb-1 text-white">BUDGET</label>
                 <select className="w-full bg-background p-2 border border-[#ffffff27] rounded-xl hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p">
                   <option className="bg-background">Select Budget...</option>
-                  <option className="bg-background">$1,000 - $5,000</option>
-                  <option className="bg-background">$5,000 - $10,000</option>
-                  <option className="bg-background">$10,000+</option>
+                  <option className="bg-background">10 000 Da - 50 000 DA</option>
+                  <option className="bg-background">50 000 DA - $150 000 DA</option>
+                  <option className="bg-background">150 000 DA +</option>
                 </select>
               </div>
 
