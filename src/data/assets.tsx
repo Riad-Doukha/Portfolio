@@ -109,7 +109,7 @@ export const details: Details[] = [
       "A modern educational platform built with the MERN stack, enabling course management, assignments, quizzes, and real-time communication between teachers and students.",
     task:
       "Designed and developed the entire user interface using modern web technologies, focusing on responsive design, intuitive navigation, and smooth transitions to enhance user experience and make learning more fun.",
-    url: "https://liberty-school-me.onrender.com",
+    url: "https://liberty-school.vercel.app",
   },
   {
     id: "2",
@@ -121,6 +121,7 @@ export const details: Details[] = [
     task:
       "Built and deployed the frontend of the website, used beginer friendly web technologies (HTML, CSS, and Tailwind).",
     url: "https://example.com/project2",
+    ready: false
   },
   {
     id: "3",

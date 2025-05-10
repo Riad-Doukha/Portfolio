@@ -63,7 +63,7 @@ export default function Det() {
                   }
                 }}
               >
-                {selectedDetail?.ready === false?"Not Completed Yet":"See Demo"}
+                {selectedDetail?.ready === false?"Coming Soon...":"See Demo"}
               </a>
             </button>
           </div>
