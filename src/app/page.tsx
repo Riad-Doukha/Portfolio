@@ -5,6 +5,8 @@ import Gallery from "@/components/grid";
 import NavBar from "@/components/navBar";
 import Process from "@/components/process";
 import { Scroller } from "@/components/scroller";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { details, items1, items2, layers, riad } from "@/data/assets";
 import {
   RiArrowRightUpLine,
@@ -19,22 +21,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // useEffect(() => {
-  //   async function prepare() {
-  //     // Simulate setup logic: API calls, auth checks, etc.
-  //     await new Promise(resolve => setTimeout(resolve, 2000)); // Example delay
-  //     // Once everything is ready
-  //     setIsReady(true);
-  //   }
-
-  //   prepare();
-  // }, []);
-
-  // if (!isReady) {
-  //   return <div>Loading...</div>; // or your custom loading component
-  // }
+  const [isOpen, setIsOpen] = useState(false);  useEffect(() => {
+  AOS.init({
+    duration: 1200, // animation duration in ms
+  });
+}, []);
 
   const handleClick = () => {
     window.location.href =
@@ -64,7 +55,7 @@ export default function Home() {
           <NavBar></NavBar>
 
           <div className="max-w-[1400px] self-start flex justify-between h-[100vh] [@media(max-width:1130px)]:h-[80vh] items-center">
-            <div className="">
+            <div data-aos="fade-right">
               <button className="group button-b flex gap-2 rounded-full text-p max-w-max cutsor-pointer mb-5 items-center [@media(max-width:450px)]:mx-auto">
                 <RiCodeSSlashLine className="group-hover:text-white group-hover:border-white"></RiCodeSSlashLine>
                 <p className="group-hover:text-white group-hover:border-white">
@@ -77,7 +68,7 @@ export default function Home() {
                     <span className="text-white">Mohamed Riad</span> Doukha
                   </h1>
                   <a href="#about">
-                    <div className="bg-black p-3 [@media(max-width:450px)]:hidden rounded-full text-white max-w-max border-t-2 border-t-[#ffffff27] border-l-2 border-l-[#ffffff26] cursor-pointer">
+                    <div className="bg-black p-3 [@media(max-width:450px)]:hidden rounded-full text-white max-w-max border-t-2 border-t-[#ffffff27] border-l-2 border-l-[#ffffff26] ">
                       <RiArrowRightUpLine></RiArrowRightUpLine>
                     </div>
                   </a>
@@ -93,7 +84,7 @@ export default function Home() {
                 <button className="button-b rounded-full text-p hover:text-white hover:border-white">
                   <Link href={"/projects"}>See All Projects</Link>
                 </button>
-                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
                   <Link href="/contact">Contact Now</Link>
                 </button>
               </div>
@@ -113,10 +104,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <Gallery assets={details} istrue={true}></Gallery>
+
           <div className="min-h-screen w-[84.5vw] px-6 py-20" id="about">
             {/* Badge + Heading */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-10" data-aos="fade-up">
               <h1 className="text-h1">
                 <span className="text-white">Mohamed Riad</span> Doukha
               </h1>
@@ -141,6 +134,7 @@ export default function Home() {
                     return !prev;
                   })
                 }
+                data-aos="fade-right"
               >
                 {isOpen ? (
                   <img
@@ -170,27 +164,27 @@ export default function Home() {
                   <a
                     href="https://www.instagram.com/riad_doukha/"
                     target="_blank"
-                    className="transition transform hover:scale-102 cursor-pointer duration-300 group-hover:text-white"
+                    className="transition transform hover:scale-102  duration-300 group-hover:text-white"
                   >
                     <RiInstagramLine />
                   </a>
                   <a
                     href="https://github.com/Riad-Doukha"
                     target="_blank"
-                    className="transition transform hover:scale-102 cursor-pointer duration-300 group-hover:text-white"
+                    className="transition transform hover:scale-102  duration-300 group-hover:text-white"
                   >
                     <RiGithubLine />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/mohamed-riad-doukha-3a11b3332/"
                     target="_blank"
-                    className="transition transform hover:scale-110 cursor-pointer duration-300 group-hover:text-white"
+                    className="transition transform hover:scale-110  duration-300 group-hover:text-white"
                   >
                     <RiLinkedinLine />
                   </a>
                   <button
                     onClick={handleClick}
-                    className="transition transform hover:scale-110 cursor-pointer duration-300 group-hover:text-white"
+                    className="transition transform hover:scale-110  duration-300 group-hover:text-white"
                     aria-label="Send email"
                   >
                     <RiMailLine />
@@ -205,10 +199,10 @@ export default function Home() {
               </div>
 
               {/* Right Card (About + Skills + Experience) */}
-              <div className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] hover:border-white border-1">
+              <div data-aos="fade-left" className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] hover:border-white border-1">
                 {/* Bio */}
                 <p className=" leading-relaxed group-hover:text-white">
-                  I'm Mohamed Riad Doukha, a dedicated Full-Stack Developer
+                  I am Mohamed Riad Doukha, a dedicated Full-Stack Developer
                   based in the vibrant city of Algiers, Algeria. I specialize in
                   building responsive, user-friendly web applications, combining
                   intuitive front-end design with powerful back-end systems.
@@ -285,7 +279,7 @@ export default function Home() {
         <div className="min-h-screen flex items-center justify-center">
           <div className="w-[84.5vw] px-6 py-20 max-w-[1400px]">
             <div className="flex items-center justify-between [@media(max-width:865px)]:text-center [@media(max-width:865px)]:flex-col">
-              <div className="text-left mb-10">
+              <div className="text-left mb-10" data-aos="fade-right">
                 <h1 className="text-h1 [@media(max-width:865px)]:text-center">
                   <span className="text-white">Web</span> Services
                 </h1>
@@ -293,7 +287,7 @@ export default function Home() {
                   Explore a suite of web-dev services to elevate your brand.
                 </p>
               </div>
-              <button className="text-p text-black bg-white px-5 py-2.5 rounded-full font-semibold cursor-pointer hover:opacity-60">
+              <button data-aos="fade-left" className="text-p text-black bg-white px-5 py-2.5 rounded-full font-semibold  hover:opacity-60">
                 <Link href="/contact">Contact Now</Link>
               </button>
             </div>
@@ -309,7 +303,7 @@ export default function Home() {
         >
           <div className="w-[84.5vw] px-6 pb-10 pt-20 max-w-[1400px]">
             <div className="flex items-center justify-between gap-3 [@media(max-width:865px)]:flex-col">
-              <div className="text-left">
+              <div data-aos="fade-right" className="text-left">
                 <h1 className="text-h1 [@media(max-width:865px)]:text-center">
                   <span className="text-white">Recent</span> Projects
                 </h1>
@@ -317,11 +311,11 @@ export default function Home() {
                   Showcase of some of my recent sleek websites.
                 </p>
               </div>
-              <div className="mt-5 flex items-center gap-4 [@media(max-width:365px)]:flex-col">
+              <div data-aos="fade-left" className="mt-5 flex items-center gap-4 [@media(max-width:365px)]:flex-col">
                 <button className="button-b rounded-full text-p hover:text-white hover:border-white">
                   <Link href={"/projects"}>See All Projects</Link>
                 </button>
-                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
                   <Link href="/contact">Contact Now</Link>
                 </button>
               </div>
@@ -333,7 +327,7 @@ export default function Home() {
         <div className="min-h-screen z-0 flex flex-col items-center justify-center pb-20">
           <div className="w-[84.5vw] px-6 pt-20 max-w-[1400px]">
             <div className="flex items-center justify-center gap-3 [@media(max-width:865px)]:flex-col">
-              <div className="text-left">
+              <div className="text-left" data-aos="fade-up">
                 <h1 className="text-h1 text-center">
                   <span className="text-white">Why me as</span> your developer
                 </h1>
@@ -379,7 +373,7 @@ export default function Home() {
                           <button className="button-b rounded-full text-p hover:text-white hover:border-white">
                             <Link href={"/projects"}>See All Projects</Link>
                           </button>
-                          <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+                          <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
                             <Link href="/contact">Contact Now</Link>
                           </button>
                         </div>
@@ -460,7 +454,7 @@ export default function Home() {
                       <button className="button-b rounded-full text-p hover:text-white hover:border-white">
                         <Link href={"/projects"}>See All Projects</Link>
                       </button>
-                      <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+                      <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
                         <Link href="/contact">Contact Now</Link>
                       </button>
                     </div>
@@ -478,12 +472,12 @@ export default function Home() {
         <div className="min-h-[43vh] flex flex-col items-center justify-center mb-[200px]  rounded-b-[64px]">
           <div className="w-[50vw] px-6 max-w-[1400px]"></div>
           <footer className="p-8 flex flex-col justify-center space-y-6 w-[84.5vw]">
-            <div className="text-left flex justify-between items-center gap-5 [@media(max-width:1000px)]:gap-0 [@media(max-width:1000px)]:flex-col">
+            <div data-aos="fade-up" className="text-left flex justify-between items-center gap-5 [@media(max-width:1000px)]:gap-0 [@media(max-width:1000px)]:flex-col">
               <h1 className="text-h1 [@media(max-width:1000px)]:text-center">
                 <span className="text-white">Let's start</span> working
               </h1>
               <div className="mt-10 mb-5 flex items-center gap-5">
-                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
                   <Link href="/contact">Contact Now</Link>
                 </button>
               </div>

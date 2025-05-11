@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <>
       <div className="flex justify-center items-center">
-        <div className="text-center my-10 w-[60vw]">
+        <div className="text-center my-10 w-[60vw]" data-aos="fade-up">
           <h1 className="text-h1 text-center">
             <span className="text-white">Elevating Brands</span> to Drive Success and Impact
           </h1>
@@ -24,7 +24,7 @@ export default function Contact() {
       >
         <div className="w-[50vw] px-6 max-w-[1400px]"></div>
         <footer className="p-8 flex flex-col justify-center space-y-6 w-[84.5vw]">
-          <div className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
+          <div data-aos="fade-up" className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
             <h1 className="text-h2 [@media(max-width:1400px)]:text-center">
               <span className="text-white">What are you waiting for?</span>{" "}
               Let's start working
@@ -33,7 +33,7 @@ export default function Contact() {
               <button className="button-b rounded-full text-p hover:text-white hover:border-white">
               <Link href={"/"}>Go Back Home</Link>
               </button>
-              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
                 <Link href={"/contact"}>Contact Now</Link>
               </button>
             </div>

@@ -18,7 +18,7 @@ export default function Contact() {
   return (
     <>
       <div className="flex justify-center items-center">
-        <div className="text-center my-10 w-[84.5vw]">
+        <div data-aos="fade-up" className="text-center my-10 w-[84.5vw]">
           <h1 className="text-h1 text-center">
             <span className="text-white">Lets Collaborate</span> and Begin the
             work
@@ -35,6 +35,7 @@ export default function Contact() {
             className="bg-[#111111c8] rounded-xl p-6 w-full md:w-1/3 shadow-md border-[#ffffff27] group hover:border-white border-1"
             onMouseEnter={() => setIsOpen("/me.png")}
             onMouseLeave={() => setIsOpen("/me-black.png")}
+            data-aos="fade-right"
           >
             <img
               src={isOpen}
@@ -52,45 +53,44 @@ export default function Contact() {
               <a
                 href="https://www.instagram.com/riad_doukha/"
                 target="_blank"
-                className="transition transform hover:scale-102 cursor-pointer duration-300 group-hover:text-white"
+                className="transition transform hover:scale-102 duration-300 group-hover:text-white"
               >
                 <RiInstagramLine />
               </a>
               <a
                 href="https://github.com/Riad-Doukha"
                 target="_blank"
-                className="transition transform hover:scale-102 cursor-pointer duration-300 group-hover:text-white"
+                className="transition transform hover:scale-102 duration-300 group-hover:text-white"
               >
                 <RiGithubLine />
               </a>
               <a
                 href="https://www.linkedin.com/in/mohamed-riad-doukha-3a11b3332/"
                 target="_blank"
-                className="transition transform hover:scale-110 cursor-pointer duration-300 group-hover:text-white"
+                className="transition transform hover:scale-110 duration-300 group-hover:text-white"
               >
                 <RiLinkedinLine />
               </a>
               <button
                 onClick={handleClick}
-                className="transition transform hover:scale-110 cursor-pointer duration-300 group-hover:text-white"
+                className="transition transform hover:scale-110 duration-300 group-hover:text-white"
                 aria-label="Send email"
               >
                 <RiMailLine />
               </button>
             </div>
 
-            <a href="#to">
+            {/* <a href="#to">
               <button className="button-b rounded-full text-sm hover:opacity-60 group-hover:text-white hover:border-white">
                 Connect with me
               </button>
-            </a>
+            </a> */}
           </div>
 
-          {/* Right Card (About + Skills + Experience) */}
-          <div className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1 mt-5" id="to">
+          <div data-aos="fade-left" className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1" id="to">
             <form className="w-full mx-auto p-5">
               <div className="flex justify-between [@media(max-width:600px)]:flex-col">
-                <div className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
+                <div data-aos="zoom-in" className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
                   <label className="block mb-1 text-white">NAME</label>
                   <input
                     type="text"
@@ -99,7 +99,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <div className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
+                <div data-aos="zoom-in" className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
                   <label className="block mb-1 text-white">EMAIL</label>
                   <input
                     type="email"
@@ -109,7 +109,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mb-5">
+              <div data-aos="zoom-in" className="mb-5">
                 <label className="block mb-1 text-white">WEBSITE</label>
                 <input
                   type="url"
@@ -118,7 +118,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="mb-5">
+              <div data-aos="zoom-in" className="mb-5">
                 <label className="block mb-1 text-white">BUDGET</label>
                 <select className="w-full bg-background p-2 border border-[#ffffff27] rounded-xl hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p">
                   <option className="bg-background">Select Budget...</option>
@@ -132,7 +132,7 @@ export default function Contact() {
                 </select>
               </div>
 
-              <div className="mb-5">
+              <div data-aos="zoom-in" className="mb-5">
                 <label className="block mb-1 text-white">MESSAGE</label>
                 <textarea
                   placeholder="Your Message"
@@ -153,7 +153,7 @@ export default function Contact() {
       <div className="min-h-[15vh] my-10 flex flex-col items-center justify-center  rounded-b-[64px]">
         <div className="w-[50vw] px-6 max-w-[1400px]"></div>
         <footer className="py-8 flex flex-col justify-center space-y-6 w-[84.5vw]">
-          <div className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
+          <div data-aos="fade-up" className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
             <h1 className="text-h2 [@media(max-width:1400px)]:text-center">
               <span className="text-white">What are you waiting for?</span>{" "}
               Let's start working
@@ -162,7 +162,7 @@ export default function Contact() {
               <button className="button-b rounded-full text-p hover:text-white hover:border-white">
                 <Link href={"/projects"}>See All Projects</Link>
               </button>
-              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
                 <Link href={"/"}>Go Back Home</Link>
               </button>
             </div>

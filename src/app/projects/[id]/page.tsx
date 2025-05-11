@@ -68,7 +68,7 @@ export default function Det() {
             </button>
           </div>
           <div
-            className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl cursor-pointer h-[45vh] w-[40vw] p-5 [@media(max-width:767px)]:w-[78vw]`}
+            className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl h-[45vh] w-[40vw] p-5 [@media(max-width:767px)]:w-[78vw]`}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
@@ -95,7 +95,7 @@ export default function Det() {
               <button className="button-b rounded-full text-p hover:text-white hover:border-white">
                 <Link href={"/projects"}>See All Projects</Link>
               </button>
-              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
+              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
                 <Link href={"/contact"}>Contact Now</Link>
               </button>
             </div>

@@ -93,7 +93,6 @@ export default function DraggableCardStack() {
               transform: initialStyles[idx].transform,
               zIndex: initialStyles[idx].zIndex,
             }}
-            
           >
             <h2 className="text-lg md:text-xl font-bold mb-2 text-white">{card.title}</h2>
             <p className="text-xs md:text-sm">{card.description}</p>

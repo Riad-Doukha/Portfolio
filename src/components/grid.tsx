@@ -34,7 +34,7 @@ const Gallery = ({
               href={`/projects/${item.id}`}
             >
               <div
-                className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl transition transform hover:scale-[1.02] cursor-pointer duration-300 
+                className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl transition transform hover:scale-[1.02]  duration-300 
                 ${
                   num == 0
                     ? i % 4 === 0 || i % 4 === 3
@@ -57,6 +57,7 @@ const Gallery = ({
                     return newState;
                   })
                 }
+                data-aos="fade-right"
               >
                 <img
                   src={isOpen[i] ? item.image : item.black}
@@ -69,7 +70,7 @@ const Gallery = ({
         : assets.map((item: Layer, i: number) => (
             <div
               key={i}
-              className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl transition transform hover:scale-[1.02] cursor-pointer duration-300 
+              className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl transition transform hover:scale-[1.02]  duration-300 
             ${
               i % 4 === 0 || i % 4 === 3
                 ? "h-[60vh]"
@@ -90,6 +91,7 @@ const Gallery = ({
                   return newState;
                 })
               }
+              data-aos="fade-left"
             >
               <div
                 className={`${

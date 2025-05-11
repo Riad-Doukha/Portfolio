@@ -189,6 +189,6 @@ export const DraggableCardContainer = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div className={cn( "cursor-grab",className)}>{children}</div>
+    <div className={cn(className)}>{children}</div>
   );
 };

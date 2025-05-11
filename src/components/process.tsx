@@ -56,7 +56,7 @@ function Process() {
 
   return (
     <section className="scroll-section-outer" ref={triggerRef}>
-      <div className="text-center mb-0 pt-20">
+      <div data-aos="fade-up" className="text-center mb-0 pt-20">
         <h1 className="text-h1">
           <span className="text-white">Process</span> Is Everything
         </h1>
@@ -154,7 +154,7 @@ function Process() {
       </div>
       <div className="w-full max-w-6xl px-3 mx-auto flex [@media(max-width:950px)]:flex-col items-center text-center md:text-start md:items-center justify-between gap-6 py-5">
         {/* Left Side */}
-        <div>
+        <div data-aos="fade-right">
           <div className="flex items-center justify-center mb-2">
             <h3 className="text-h2 text-white">I am with you in every step</h3>
           </div>
@@ -164,11 +164,11 @@ function Process() {
         </div>
 
         {/* Right Side Buttons */}
-        <div className="flex gap-4 mt-4 md:mt-0 [@media(max-width:450px)]:flex-col">
+        <div className="flex gap-4 mt-4 md:mt-0 [@media(max-width:450px)]:flex-col" data-aos="fade-left">
           <button className="button-b rounded-full text-p hover:text-white hover:border-white">
             <Link href={"/projects"}>See All Projects</Link>
           </button>
-          <button className="text-p text-black bg-white px-5 py-2.5 rounded-full font-semibold cursor-pointer hover:opacity-60">
+          <button className="text-p text-black bg-white px-5 py-2.5 rounded-full font-semibold hover:opacity-60">
             <Link href="/contact">Contact Now</Link>
           </button>
         </div>
