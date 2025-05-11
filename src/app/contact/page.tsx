@@ -87,7 +87,7 @@ export default function Contact() {
           </div>
 
           {/* Right Card (About + Skills + Experience) */}
-          <div className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1" id="to">
+          <div className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1 mt-5" id="to">
             <form className="w-full mx-auto p-5">
               <div className="flex justify-between [@media(max-width:600px)]:flex-col">
                 <div className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
