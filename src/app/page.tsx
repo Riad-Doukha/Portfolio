@@ -197,9 +197,11 @@ export default function Home() {
                   </button>
                 </div>
 
+                <Link href={"/contact"}>
                 <button className="button-b rounded-full text-sm hover:opacity-60 group-hover:text-white group-hover:border-white">
                   Connect with me
                 </button>
+                </Link>
               </div>
 
               {/* Right Card (About + Skills + Experience) */}

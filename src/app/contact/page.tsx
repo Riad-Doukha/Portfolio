@@ -79,13 +79,15 @@ export default function Contact() {
               </button>
             </div>
 
-            <button className="button-b rounded-full text-sm hover:opacity-60 group-hover:text-white hover:border-white">
-              Connect with me
-            </button>
+            <a href="#to">
+              <button className="button-b rounded-full text-sm hover:opacity-60 group-hover:text-white hover:border-white">
+                Connect with me
+              </button>
+            </a>
           </div>
 
           {/* Right Card (About + Skills + Experience) */}
-          <div className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1">
+          <div className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1" id="to">
             <form className="w-full mx-auto p-5">
               <div className="flex justify-between [@media(max-width:600px)]:flex-col">
                 <div className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
@@ -120,8 +122,12 @@ export default function Contact() {
                 <label className="block mb-1 text-white">BUDGET</label>
                 <select className="w-full bg-background p-2 border border-[#ffffff27] rounded-xl hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p">
                   <option className="bg-background">Select Budget...</option>
-                  <option className="bg-background">10 000 Da - 50 000 DA</option>
-                  <option className="bg-background">50 000 DA - $150 000 DA</option>
+                  <option className="bg-background">
+                    10 000 Da - 50 000 DA
+                  </option>
+                  <option className="bg-background">
+                    50 000 DA - $150 000 DA
+                  </option>
                   <option className="bg-background">150 000 DA +</option>
                 </select>
               </div>
@@ -144,9 +150,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div
-        className="min-h-[15vh] my-10 flex flex-col items-center justify-center  rounded-b-[64px]"
-      >
+      <div className="min-h-[15vh] my-10 flex flex-col items-center justify-center  rounded-b-[64px]">
         <div className="w-[50vw] px-6 max-w-[1400px]"></div>
         <footer className="py-8 flex flex-col justify-center space-y-6 w-[84.5vw]">
           <div className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
@@ -156,7 +160,7 @@ export default function Contact() {
             </h1>
             <div className="mt-10 mb-5 flex items-center [@media(max-width:400px)]:flex-col gap-5">
               <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-              <Link href={"/projects"}>See All Projects</Link>
+                <Link href={"/projects"}>See All Projects</Link>
               </button>
               <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold cursor-pointer hover:opacity-60">
                 <Link href={"/"}>Go Back Home</Link>
