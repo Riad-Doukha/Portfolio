@@ -87,10 +87,17 @@ export default function Contact() {
             </a> */}
           </div>
 
-          <div data-aos="fade-left" className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1" id="to">
+          <div
+            data-aos="fade-left"
+            className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1"
+            id="to"
+          >
             <form className="w-full mx-auto p-5">
               <div className="flex justify-between [@media(max-width:600px)]:flex-col">
-                <div data-aos="zoom-in" className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
+                <div
+                  data-aos="zoom-in"
+                  className="mb-5 w-[47%] [@media(max-width:600px)]:w-full"
+                >
                   <label className="block mb-1 text-white">NAME</label>
                   <input
                     type="text"
@@ -99,7 +106,10 @@ export default function Contact() {
                   />
                 </div>
 
-                <div data-aos="zoom-in" className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
+                <div
+                  data-aos="zoom-in"
+                  className="mb-5 w-[47%] [@media(max-width:600px)]:w-full"
+                >
                   <label className="block mb-1 text-white">EMAIL</label>
                   <input
                     type="email"
@@ -153,18 +163,25 @@ export default function Contact() {
       <div className="min-h-[15vh] my-10 flex flex-col items-center justify-center  rounded-b-[64px]">
         <div className="w-[50vw] px-6 max-w-[1400px]"></div>
         <footer className="py-8 flex flex-col justify-center space-y-6 w-[84.5vw]">
-          <div data-aos="fade-up" className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
+          <div
+            data-aos="fade-up"
+            className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col"
+          >
             <h1 className="text-h2 [@media(max-width:1400px)]:text-center">
               <span className="text-white">What are you waiting for?</span>{" "}
               Let's start working
             </h1>
             <div className="mt-10 mb-5 flex items-center [@media(max-width:400px)]:flex-col gap-5">
-              <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                <Link href={"/projects"}>See All Projects</Link>
-              </button>
-              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
-                <Link href={"/"}>Go Back Home</Link>
-              </button>
+              <Link href={"/projects"}>
+                <button className="button-b rounded-full text-p hover:text-white hover:border-white">
+                  See All Projects
+                </button>
+              </Link>
+              <Link href={"/"}>
+                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
+                  Go Back Home
+                </button>
+              </Link>
             </div>
           </div>
 

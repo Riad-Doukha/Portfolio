@@ -20,7 +20,7 @@ export default function Det() {
   return (
     <>
       <div className="flex justify-center items-center">
-        <div className="text-center my-9 w-[60vw]">
+        <div className="text-center my-9 w-[60vw]" data-aos="fade-up">
           <h1 className="text-h1 text-center">
             <span className="text-white">Meet </span> My Project
           </h1>
@@ -29,48 +29,52 @@ export default function Det() {
       <div className="flex justify-center items-center">
         <div className="flex flex-col md:flex-row justify-center md:justify-between md:items-center gap-10 w-[84.5vw]">
           <div className="w-[40vw] [@media(max-width:767px)]:w-[78vw] [@media(max-width:767px)]:items-center [@media(max-width:767px)]:text-center flex flex-col justify-between">
-            <div>
+            <div data-aos="fade-right">
               <h1 className="text-h2 text-white">{selectedDetail?.title}</h1>
               <p className="text-p w-[90%] [@media(max-width:767px)]:w-full">
                 {selectedDetail?.description}
               </p>
             </div>
-            <div>
+            <div data-aos="fade-right">
               <h3 className="text-h3 text-white mt-2">My task :</h3>
               <p className="text-p w-[90%] [@media(max-width:767px)]:w-full">
                 {selectedDetail?.task}
               </p>
             </div>
-            <button
-              className={`button-b rounded-full max-w-max mt-5 text-p hover:text-white hover:border-white ${
-                selectedDetail?.ready === false
-                  ? "disable cursor-not-allowed"
-                  : ""
-              }`}
+            <a
+              href={selectedDetail?.url}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={(e) => {
                 if (selectedDetail?.ready === false) {
                   e.preventDefault();
                 }
               }}
             >
-              <a
-                href={selectedDetail?.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                data-aos="fade-right"
+                className={`button-b rounded-full max-w-max mt-5 text-p hover:text-white hover:border-white ${
+                  selectedDetail?.ready === false
+                    ? "disable cursor-not-allowed"
+                    : ""
+                }`}
                 onClick={(e) => {
                   if (selectedDetail?.ready === false) {
                     e.preventDefault();
                   }
                 }}
               >
-                {selectedDetail?.ready === false?"Coming Soon...":"See Demo"}
-              </a>
-            </button>
+                {selectedDetail?.ready === false
+                  ? "Coming Soon..."
+                  : "See Demo"}
+              </button>
+            </a>
           </div>
           <div
             className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl h-[45vh] w-[40vw] p-5 [@media(max-width:767px)]:w-[78vw]`}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
+            data-aos="fade-left"
           >
             <img
               src={selectedDetail?.image}
@@ -86,18 +90,25 @@ export default function Det() {
       >
         <div className="w-[50vw] max-w-[1400px]"></div>
         <footer className="py-5 flex flex-col justify-center space-y-6 w-[84.5vw]">
-          <div className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
+          <div
+            data-aos="fade-up"
+            className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col"
+          >
             <h1 className="text-h2 [@media(max-width:1400px)]:text-center">
               <span className="text-white">What are you waiting for?</span>{" "}
               Let's start working
             </h1>
             <div className="mt-10 mb-5 flex items-center [@media(max-width:400px)]:flex-col gap-5">
-              <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                <Link href={"/projects"}>See All Projects</Link>
-              </button>
-              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
-                <Link href={"/contact"}>Contact Now</Link>
-              </button>
+              <Link href={"/projects"}>
+                <button className="button-b rounded-full text-p hover:text-white hover:border-white">
+                  See All Projects
+                </button>
+              </Link>
+              <Link href={"/contact"}>
+                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
+                  Contact Now
+                </button>
+              </Link>
             </div>
           </div>
 

@@ -9,7 +9,8 @@ export default function Contact() {
       <div className="flex justify-center items-center">
         <div className="text-center my-10 w-[60vw]" data-aos="fade-up">
           <h1 className="text-h1 text-center">
-            <span className="text-white">Elevating Brands</span> to Drive Success and Impact
+            <span className="text-white">Elevating Brands</span> to Drive
+            Success and Impact
           </h1>
         </div>
       </div>
@@ -24,18 +25,25 @@ export default function Contact() {
       >
         <div className="w-[50vw] px-6 max-w-[1400px]"></div>
         <footer className="p-8 flex flex-col justify-center space-y-6 w-[84.5vw]">
-          <div data-aos="fade-up" className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col">
+          <div
+            data-aos="fade-up"
+            className="text-left flex justify-between items-center gap-5 [@media(max-width:1400px)]:gap-0 [@media(max-width:1400px)]:flex-col"
+          >
             <h1 className="text-h2 [@media(max-width:1400px)]:text-center">
               <span className="text-white">What are you waiting for?</span>{" "}
               Let's start working
             </h1>
             <div className="mt-10 mb-5 flex items-center [@media(max-width:400px)]:flex-col gap-5">
-              <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-              <Link href={"/"}>Go Back Home</Link>
-              </button>
-              <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
-                <Link href={"/contact"}>Contact Now</Link>
-              </button>
+              <Link href={"/"}>
+                <button className="button-b rounded-full text-p hover:text-white hover:border-white">
+                  Go Back Home
+                </button>
+              </Link>
+              <Link href={"/contact"}>
+                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold hover:opacity-60">
+                  Contact Now
+                </button>
+              </Link>
             </div>
           </div>
 

@@ -5,8 +5,8 @@ import Gallery from "@/components/grid";
 import NavBar from "@/components/navBar";
 import Process from "@/components/process";
 import { Scroller } from "@/components/scroller";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { details, items1, items2, layers, riad } from "@/data/assets";
 import {
   RiArrowRightUpLine,
@@ -21,11 +21,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);  useEffect(() => {
-  AOS.init({
-    duration: 1200, // animation duration in ms
-  });
-}, []);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // animation duration in ms
+    });
+  }, []);
 
   const handleClick = () => {
     window.location.href =
@@ -81,15 +82,19 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-5 flex items-center gap-5 [@media(max-width:450px)]:justify-center [@media(max-width:365px)]:flex-col">
-                <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                  <Link href={"/projects"}>See All Projects</Link>
-                </button>
-                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                  <Link href="/contact">Contact Now</Link>
-                </button>
+                <Link href={"/projects"}>
+                  <button className="button-b rounded-full text-p hover:text-white hover:border-white">
+                    See All Projects
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
+                    ontact Now
+                  </button>
+                </Link>
               </div>
             </div>
-            <div className="[@media(max-width:1130px)]:hidden">
+            <div data-aos="fade-left" className="[@media(max-width:1130px)]:hidden">
               <div className="bouncing-element1 rounded-2xl ml-[5vw] mb-2 rotate-[-12deg] border-2 hover:border-white border-[#ffffff27] flex justify-center items-center p-5">
                 <h1 className="text-white">
                   "Working with him was a game changer"
@@ -192,14 +197,17 @@ export default function Home() {
                 </div>
 
                 <Link href={"/contact"}>
-                <button className="button-b rounded-full text-sm hover:opacity-60 group-hover:text-white group-hover:border-white">
-                  Connect with me
-                </button>
+                  <button className="button-b rounded-full text-sm hover:opacity-60 group-hover:text-white group-hover:border-white">
+                    Connect with me
+                  </button>
                 </Link>
               </div>
 
               {/* Right Card (About + Skills + Experience) */}
-              <div data-aos="fade-left" className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] hover:border-white border-1">
+              <div
+                data-aos="fade-left"
+                className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] hover:border-white border-1"
+              >
                 {/* Bio */}
                 <p className=" leading-relaxed group-hover:text-white">
                   I am Mohamed Riad Doukha, a dedicated Full-Stack Developer
@@ -287,9 +295,14 @@ export default function Home() {
                   Explore a suite of web-dev services to elevate your brand.
                 </p>
               </div>
-              <button data-aos="fade-left" className="text-p text-black bg-white px-5 py-2.5 rounded-full font-semibold  hover:opacity-60">
-                <Link href="/contact">Contact Now</Link>
-              </button>
+              <Link href="/contact">
+                <button
+                  data-aos="fade-left"
+                  className="text-p text-black bg-white px-5 py-2.5 rounded-full font-semibold  hover:opacity-60"
+                >
+                  Contact Now
+                </button>
+              </Link>
             </div>
             <Gallery assets={layers} istrue={false}></Gallery>
             <Scroller items={items1}></Scroller>
@@ -311,13 +324,20 @@ export default function Home() {
                   Showcase of some of my recent sleek websites.
                 </p>
               </div>
-              <div data-aos="fade-left" className="mt-5 flex items-center gap-4 [@media(max-width:365px)]:flex-col">
-                <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                  <Link href={"/projects"}>See All Projects</Link>
-                </button>
-                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                  <Link href="/contact">Contact Now</Link>
-                </button>
+              <div
+                data-aos="fade-left"
+                className="mt-5 flex items-center gap-4 [@media(max-width:365px)]:flex-col"
+              >
+                <Link href={"/projects"}>
+                  <button className="button-b rounded-full text-p hover:text-white hover:border-white">
+                    See All Projects
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
+                    Contact Now
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -370,12 +390,16 @@ export default function Home() {
                           Trusted by 10+ happy clients, adding $2k+ in revenue.
                         </p>
                         <div className="mt-10 mb-5 flex [@media(max-width:755px)]:justify-center [@media(max-width:365px)]:flex-col items-center gap-5">
+                          <Link href={"/projects"}>
                           <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                            <Link href={"/projects"}>See All Projects</Link>
+                            See All Projects
                           </button>
+                          </Link>
+                          <Link href="/contact">
                           <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                            <Link href="/contact">Contact Now</Link>
+                            Contact Now
                           </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -451,12 +475,16 @@ export default function Home() {
                       Get quick answers to your most pressing questions
                     </p>
                     <div className="mt-10 mb-5 [@media(max-width:363px)]:flex-col flex [@media(max-width:755px)]:justify-center items-center gap-5">
+                      <Link href={"/projects"}>
                       <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                        <Link href={"/projects"}>See All Projects</Link>
+                        See All Projects
                       </button>
+                      </Link>
+                      <Link href="/contact">
                       <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                        <Link href="/contact">Contact Now</Link>
+                        Contact Now
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -472,14 +500,19 @@ export default function Home() {
         <div className="min-h-[43vh] flex flex-col items-center justify-center mb-[200px]  rounded-b-[64px]">
           <div className="w-[50vw] px-6 max-w-[1400px]"></div>
           <footer className="p-8 flex flex-col justify-center space-y-6 w-[84.5vw]">
-            <div data-aos="fade-up" className="text-left flex justify-between items-center gap-5 [@media(max-width:1000px)]:gap-0 [@media(max-width:1000px)]:flex-col">
+            <div
+              data-aos="fade-up"
+              className="text-left flex justify-between items-center gap-5 [@media(max-width:1000px)]:gap-0 [@media(max-width:1000px)]:flex-col"
+            >
               <h1 className="text-h1 [@media(max-width:1000px)]:text-center">
                 <span className="text-white">Let's start</span> working
               </h1>
               <div className="mt-10 mb-5 flex items-center gap-5">
+                <Link href="/contact">
                 <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                  <Link href="/contact">Contact Now</Link>
+                  Contact Now
                 </button>
+                </Link>
               </div>
             </div>
             {/* Navigation Links */}
