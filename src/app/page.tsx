@@ -6,7 +6,15 @@ import NavBar from "@/components/navBar";
 import Process from "@/components/process";
 import { Scroller } from "@/components/scroller";
 import { details, items1, items2, layers, riad } from "@/data/assets";
-import { RiArrowRightUpLine, RiCodeSSlashLine, RiCursorLine, RiGithubLine, RiInstagramLine, RiLinkedinLine, RiMailLine } from "@remixicon/react";
+import {
+  RiArrowRightUpLine,
+  RiCodeSSlashLine,
+  RiCursorLine,
+  RiGithubLine,
+  RiInstagramLine,
+  RiLinkedinLine,
+  RiMailLine,
+} from "@remixicon/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -40,7 +48,7 @@ export default function Home() {
           autoPlay
           muted
           loop
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-20 [mask-image:linear-gradient(to_bottom,black_0%,transparent_0%,white_20%,white_90%,transparent_100%,black_100%)]"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-20 pointer-events-none select-none [mask-image:linear-gradient(to_bottom,black_0%,transparent_0%,white_20%,white_90%,transparent_100%,black_100%)]"
         >
           <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -344,7 +352,7 @@ export default function Home() {
             autoPlay
             muted
             loop
-            className="absolute top-0 left-0 w-full h-full object-cover opacity-20"
+            className="absolute top-0 left-0 w-full h-full object-cover opacity-20 pointer-events-none select-none"
           >
             <source src="/video2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -355,7 +363,7 @@ export default function Home() {
               {/* Main content with sticky cards */}
               <div className="relative flex [@media(max-width:755px)]:flex-col justify-between gap-3 py-[100px]">
                 {/* Left sticky title */}
-                <div className="h-53 sticky top-[150px] w-[40vw] [@media(max-width:755px)]:h-[500px] [@media(max-width:755px)]:w-full  [@media(max-width:1042px)]:h-70">
+                <div className="h-53 sticky top-[150px]  [@media(max-width:404px)]:top-[100px] w-[40vw] [@media(max-width:755px)]:h-[500px] [@media(max-width:755px)]:w-full  [@media(max-width:1042px)]:h-70">
                   <div className="sticky top-0">
                     <div className="flex items-start justify-start h-[420px] [@media(max-width:755px)]:h-[620px]">
                       <div className="text-left [@media(max-width:755px)]:w-full">
@@ -430,23 +438,23 @@ export default function Home() {
         </div>
 
         <div
-          className="min-h-screen flex flex-col items-center justify-center py-[100px] bg-black rounded-b-[64px] [mask-image:linear-gradient(to_bottom,black_0%,transparent_0%,white_20%)]"
+          className="min-h-screen flex flex-col items-center justify-center py-[100px] [@media(max-width:404px)]:py-[50px] bg-black rounded-b-[64px] [mask-image:linear-gradient(to_bottom,black_0%,transparent_0%,white_20%)]"
           id="qaa"
         >
           <div className="w-[84.5vw] px-6 max-w-[1400px]">
             <div className="container mx-auto h-full">
               {/* Main content with sticky cards */}
-              <div className="relative flex [@media(max-width:755px)]:flex-col justify-between gap-3">
+              <div className="relative flex [@media(max-width:755px)]:flex-col h-auto justify-between gap-3">
                 {/* Left sticky title */}
-                <div className="h-53 [@media(max-width:1285px)]:h-80 w-[40vw] sticky top-[150px] [@media(max-width:755px)]:h-[830px] [@media(max-width:365px)]:h-[880px] [@media(max-width:755px)]:w-full">
-                  <div className="text-left [@media(max-width:755px)]:h-[620px] [@media(max-width:755px)]:w-full">
+                <div className="h-53 [@media(max-width:1285px)]:h-80 w-[40vw] sticky top-[150px] top-between [@media(max-width:755px)]:w-full">
+                  <div className="text-left [@media(max-width:755px)]:h-[620px]  [@media(max-width:755px)]:w-full">
                     <h1 className="text-h1 [@media(max-width:755px)]:text-center">
                       <span className="text-white">Questions, </span>Answers
                     </h1>
                     <p className="mt-2 text-p [@media(max-width:755px)]:text-center">
                       Get quick answers to your most pressing questions
                     </p>
-                    <div className="mt-10 mb-5 [@media(max-width:365px)]:flex-col flex [@media(max-width:755px)]:justify-center items-center gap-5">
+                    <div className="mt-10 mb-5 [@media(max-width:363px)]:flex-col flex [@media(max-width:755px)]:justify-center items-center gap-5">
                       <button className="button-b rounded-full text-p hover:text-white hover:border-white">
                         <Link href={"/projects"}>See All Projects</Link>
                       </button>
@@ -457,8 +465,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Right sticky cards column */}
-                <Faq></Faq>
+                <div className="h-auto z-500">
+                  <Faq></Faq>
+                </div>
               </div>
             </div>
           </div>

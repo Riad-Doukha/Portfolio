@@ -319,3 +319,27 @@
     @apply bg-background text-foreground;
   }
 }
+@media (max-width: 755px) and (min-width: 403px) {
+  .top-between {
+    top: 100px;
+    height: 830px;
+  }
+}
+@media (max-width: 403px) and (min-width: 380px) {
+  .top-between {
+    top: 80px;
+    height: 860px;
+  }
+}
+@media (max-width: 380px) and (min-width: 363px) {
+  .top-between {
+    top: 75px;
+    height: 900px;
+  }
+}
+@media (max-width: 363px) {
+  .top-between {
+    top: 50px;
+    height: 980px;
+  }
+}
