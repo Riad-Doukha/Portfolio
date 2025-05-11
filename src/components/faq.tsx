@@ -76,7 +76,7 @@ export default function Faq() {
 
   const [isOpen, setIsOpen] = useState<boolean[]>([false, false, false, false, false, false, false, false, false, false])
   return (
-    <div className="space-y-4 w-[35vw] [@media(max-width:755px)]:w-full z-500">
+    <div className="space-y-4 w-[35vw] [@media(max-width:755px)]:w-full mt-10 z-500">
       <Accordion
         type="single"
         collapsible
