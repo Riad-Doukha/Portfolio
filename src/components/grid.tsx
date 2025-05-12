@@ -29,10 +29,7 @@ const Gallery = ({
     >
       {istrue
         ? assets.map((item: Details, i: number) => (
-            <Link
-              key={i}
-              href={`/projects/${item.id}`}
-            >
+            <Link key={i} href={`/projects/${item.id}`}>
               <div
                 className={`border border-[#ffffff27] hover:border-white bg-[#111111c8] overflow-hidden rounded-2xl transition transform hover:scale-[1.02]  duration-300 
                 ${
@@ -85,6 +82,20 @@ const Gallery = ({
                 })
               }
               onMouseLeave={() =>
+                setIsOpen((prev) => {
+                  const newState = [...prev];
+                  newState[i] = false;
+                  return newState;
+                })
+              }
+              onTouchStart={() =>
+                setIsOpen((prev) => {
+                  const newState = [...prev];
+                  newState[i] = true;
+                  return newState;
+                })
+              }
+              onTouchEnd={() =>
                 setIsOpen((prev) => {
                   const newState = [...prev];
                   newState[i] = false;

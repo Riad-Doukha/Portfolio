@@ -145,6 +145,16 @@ export default function Home() {
                     return !prev;
                   })
                 }
+                onTouchStart={() =>
+                  setIsOpen((prev) => {
+                    return !prev;
+                  })
+                }
+                onTouchEnd={() =>
+                  setIsOpen((prev) => {
+                    return !prev;
+                  })
+                }
                 data-aos="fade-right"
               >
                 {isOpen ? (
