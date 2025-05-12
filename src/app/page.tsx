@@ -23,11 +23,12 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
-
   useEffect(() => {
-    AOS.init({
-      duration: 1200, // animation duration in ms
-    });
+    if (window.innerWidth >= 970) {
+      AOS.init({
+        duration: 1200, // animation duration in ms
+      });
+    }
   }, []);
 
   const handleClick = () => {
@@ -36,7 +37,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center max-w-screen">
       <div className="relative w-full h-[150vh] sky">
         <video
           autoPlay
@@ -58,7 +59,7 @@ export default function Home() {
           <NavBar></NavBar>
 
           <div className="max-w-[1400px] self-start flex justify-between h-[100vh] [@media(max-width:1130px)]:h-[80vh] items-center">
-            <div data-aos="fade-right">
+            <div data-aos="fade-up" data-aos-offset="200">
               <button className="group button-b flex gap-2 rounded-full text-p max-w-max cutsor-pointer mb-5 items-center [@media(max-width:450px)]:mx-auto">
                 <RiCodeSSlashLine className="group-hover:text-white group-hover:border-white"></RiCodeSSlashLine>
                 <p className="group-hover:text-white group-hover:border-white">
@@ -96,7 +97,10 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div data-aos="fade-left" className="[@media(max-width:1130px)]:hidden">
+            <div
+              data-aos="fade-left"
+              className="[@media(max-width:1130px)]:hidden"
+            >
               <div className="bouncing-element1 rounded-2xl ml-[5vw] mb-2 rotate-[-12deg] border-2 hover:border-white border-[#ffffff27] flex justify-center items-center p-5">
                 <h1 className="text-white">
                   "Working with him was a game changer"
@@ -393,14 +397,14 @@ export default function Home() {
                         </p>
                         <div className="mt-10 mb-5 flex [@media(max-width:755px)]:justify-center [@media(max-width:365px)]:flex-col items-center gap-5">
                           <Link href={"/projects"}>
-                          <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                            See All Projects
-                          </button>
+                            <button className="button-b rounded-full text-p hover:text-white hover:border-white">
+                              See All Projects
+                            </button>
                           </Link>
                           <Link href="/contact">
-                          <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                            Contact Now
-                          </button>
+                            <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
+                              Contact Now
+                            </button>
                           </Link>
                         </div>
                       </div>
@@ -478,14 +482,14 @@ export default function Home() {
                     </p>
                     <div className="mt-10 mb-5 [@media(max-width:363px)]:flex-col flex [@media(max-width:755px)]:justify-center items-center gap-5">
                       <Link href={"/projects"}>
-                      <button className="button-b rounded-full text-p hover:text-white hover:border-white">
-                        See All Projects
-                      </button>
+                        <button className="button-b rounded-full text-p hover:text-white hover:border-white">
+                          See All Projects
+                        </button>
                       </Link>
                       <Link href="/contact">
-                      <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                        Contact Now
-                      </button>
+                        <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
+                          Contact Now
+                        </button>
                       </Link>
                     </div>
                   </div>
@@ -511,9 +515,9 @@ export default function Home() {
               </h1>
               <div className="mt-10 mb-5 flex items-center gap-5">
                 <Link href="/contact">
-                <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                  Contact Now
-                </button>
+                  <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
+                    Contact Now
+                  </button>
                 </Link>
               </div>
             </div>

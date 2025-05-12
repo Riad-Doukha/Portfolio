@@ -311,13 +311,20 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@media (max-width: 969px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 box-border;
   }
   body {
-    @apply bg-background text-foreground;
-    overflow-x: hidden ;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 @media (max-width: 755px) and (min-width: 403px) {
