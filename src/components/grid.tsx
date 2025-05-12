@@ -54,6 +54,20 @@ const Gallery = ({
                     return newState;
                   })
                 }
+                onTouchStart={() =>
+                  setIsOpen((prev) => {
+                    const newState = [...prev];
+                    newState[i] = true;
+                    return newState;
+                  })
+                }
+                onTouchEnd={() =>
+                  setIsOpen((prev) => {
+                    const newState = [...prev];
+                    newState[i] = false;
+                    return newState;
+                  })
+                }
                 data-aos="fade-right"
               >
                 <img
