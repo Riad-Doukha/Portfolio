@@ -317,6 +317,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden ;
   }
 }
 @media (max-width: 755px) and (min-width: 403px) {

@@ -22,6 +22,8 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+
+
   useEffect(() => {
     AOS.init({
       duration: 1200, // animation duration in ms
