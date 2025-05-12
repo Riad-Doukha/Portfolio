@@ -15,6 +15,51 @@ export default function Contact() {
   };
 
   const [isOpen, setIsOpen] = useState("/me-black.png");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    budget: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e:any) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const res = await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      alert("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        budget: "",
+        message: "",
+      });
+    } else {
+      alert("Failed to send message.");
+    }
+  };
   return (
     <>
       <div className="flex justify-center items-center">
@@ -92,60 +137,67 @@ export default function Contact() {
             className="bg-[#111111c8] rounded-xl p-6 w-full md:w-2/3 group shadow-md flex flex-col gap-6 border-[#ffffff27] group hover:border-white border-1"
             id="to"
           >
-            <form className="w-full mx-auto p-5">
+            <form onSubmit={handleSubmit} className="w-full mx-auto p-5">
               <div className="flex justify-between [@media(max-width:600px)]:flex-col">
-                <div
-                  data-aos="zoom-in"
-                  className="mb-5 w-[47%] [@media(max-width:600px)]:w-full"
-                >
+                <div className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
                   <label className="block mb-1 text-white">NAME</label>
                   <input
+                    name="name"
                     type="text"
                     placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full p-2 border border-[#ffffff27] rounded-xl bg-background hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p"
                   />
                 </div>
 
-                <div
-                  data-aos="zoom-in"
-                  className="mb-5 w-[47%] [@media(max-width:600px)]:w-full"
-                >
+                <div className="mb-5 w-[47%] [@media(max-width:600px)]:w-full">
                   <label className="block mb-1 text-white">EMAIL</label>
                   <input
+                    name="email"
                     type="email"
                     placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full p-2 border border-[#ffffff27] rounded-xl bg-background hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p"
                   />
                 </div>
               </div>
 
-              <div data-aos="zoom-in" className="mb-5">
-                <label className="block mb-1 text-white">WEBSITE</label>
+              <div className="mb-5">
+                <label className="block mb-1 text-white">Company</label>
                 <input
-                  type="url"
-                  placeholder="Company Website"
+                  name="company"
+                  type="text"
+                  placeholder="Company Name"
+                  value={formData.company}
+                  onChange={handleChange}
                   className="w-full p-2 border border-[#ffffff27] rounded-xl bg-background hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p"
                 />
               </div>
 
-              <div data-aos="zoom-in" className="mb-5">
+              <div className="mb-5">
                 <label className="block mb-1 text-white">BUDGET</label>
-                <select className="w-full bg-background p-2 border border-[#ffffff27] rounded-xl hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p">
-                  <option className="bg-background">Select Budget...</option>
-                  <option className="bg-background">
-                    10 000 Da - 50 000 DA
-                  </option>
-                  <option className="bg-background">
-                    50 000 DA - $150 000 DA
-                  </option>
-                  <option className="bg-background">150 000 DA +</option>
+                <select
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  className="w-full bg-background p-2 border border-[#ffffff27] rounded-xl hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p"
+                >
+                  <option value="">Select Budget...</option>
+                  <option>10 000 DA - 50 000 DA</option>
+                  <option>50 000 DA - 150 000 DA</option>
+                  <option>150 000 DA +</option>
                 </select>
               </div>
 
-              <div data-aos="zoom-in" className="mb-5">
+              <div className="mb-5">
                 <label className="block mb-1 text-white">MESSAGE</label>
                 <textarea
+                  name="message"
                   placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full p-2 border border-[#ffffff27] rounded-xl h-[100px] bg-background hover:border-white focus:outline-none focus:border-white placeholder:text-p text-p"
                 />
               </div>
@@ -153,8 +205,9 @@ export default function Contact() {
               <button
                 type="submit"
                 className="button-b rounded-full text-p hover:text-white [@media(max-width:600px)]:mx-auto [@media(max-width:600px)]:w-full"
+                disabled={loading}
               >
-                Send your message
+                {loading ? "Sending..." : "Send your message"}
               </button>
             </form>
           </div>

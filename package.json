@@ -21,6 +21,7 @@
     "lucide-react": "^0.507.0",
     "motion": "^12.10.5",
     "next": "^15.3.2",
+    "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^19.0.0",
