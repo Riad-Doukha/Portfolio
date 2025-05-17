@@ -92,7 +92,7 @@ export default function Home() {
                 </Link>
                 <Link href="/contact">
                   <button className="text-p text-black bg-white px-[20px] py-[10px] rounded-full font-semibold  hover:opacity-60">
-                    ontact Now
+                    Contact Now
                   </button>
                 </Link>
               </div>
