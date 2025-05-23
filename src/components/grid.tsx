@@ -39,7 +39,7 @@ const Gallery = ({
                       : "h-[30vh] flex items-center justify-center"
                     : "h-[50vh]"
                 } 
-                w-[40vw] p-5 [@media(max-width:767px)]:w-[78vw] mb-5 [@media(max-width:767px)]:h-[45vh]`}
+                w-[40vw] p-5 [@media(max-width:767px)]:w-[78vw] mb-5 [@media(max-width:767px)]:h-[35vh]`}
                 onMouseEnter={() =>
                   setIsOpen((prev) => {
                     const newState = [...prev];
@@ -73,7 +73,7 @@ const Gallery = ({
                 <img
                   src={isOpen[i] ? item.image : item.black}
                   alt={item.url}
-                  className="w-full h-full object-cover block rounded-2xl border-[#ffffff27] border-2"
+                  className="w-full h-full object-fit block rounded-2xl border-[#ffffff27] border-2"
                 />
               </div>
             </Link>
@@ -141,7 +141,7 @@ const Gallery = ({
                 <img
                   src={isOpen[i] ? item.image : item.black}
                   alt={item.title}
-                  className="w-full h-full object-cover mt-4 rounded-2xl border-[#ffffff27]"
+                  className="w-full h-full object-fill mt-4 rounded-2xl border-[#ffffff27]"
                 />
               )}
             </div>
